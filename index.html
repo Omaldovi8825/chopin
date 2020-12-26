@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superomi</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="./styles/index.css">
+</head>
+<body>
+    <header>
+        <h1>Superomi</h1>
+        <div class="total">
+            <span>$</span>
+            <span id="total">0</span>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <table id="tabla">
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>
+                        <i class="fas fa-trash-alt"></i>
+                    </th>
+                </tr>
+            </table>
+        </div>
+    </main>
+
+    <div class="add-product">
+        <div class="adding-section">
+            <div class="adding-section-column">
+                <label for="alais">Producto</label>
+                <label for="cantidad">Cantidad</label>
+                <label for="precio">Precio</label>
+            </div>
+            <div class="adding-section-column">
+                <input type="text" name="alias" oninput="checkTrueValue(0)">
+                <input type="text" name="cantidad" oninput="checkTrueValue(1)">
+                <input type="text" name="precio" oninput="checkTrueValue(2)">
+            </div>
+        </div>
+        <i class="fas fa-plus-circle" id="button"></i>
+    </div>     
+    
+    <script src="./js/index.js"></script>
+</body>
+</html>

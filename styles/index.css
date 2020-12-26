@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    border: 1px solid black;
+    position: relative;
+}
+
+header h1{
+    text-align: center;
+}
+
+.total {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+label, input {
+    margin: 2px 5px;
+}
+
+input {
+    font-size: 16px;
+    width: 80px;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    border: 1px solid black;
+}
+
+.add-product {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    border: 1px solid black;
+    /* padding: 15px; */
+    cursor: pointer;
+}
+
+.adding-section {
+    /* border: 1px solid black; */
+    display: flex;
+}
+
+.adding-section-column {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    justify-content: space-around;
+}
+
+.fa-plus-circle {
+    font-size: 60px;
+    color: #1dbe1d;
+}
