@@ -5,31 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Superomi</title>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/index.css">
 </head>
 <body>
     <header>
-        <h1>Superomi</h1>
+        <img src="https://i.ibb.co/Vm1VzRh/super-omi-logo2.png" alt="logo">
+        <h1>SafeShop</h1>
+        <a href="#"><i class="fas fa-donate"></i></a>
         <div class="total">
+            <i class="fas fa-shopping-cart"></i>
             <span>$</span>
             <span id="total">0</span>
         </div>
     </header>
+
+    <!-- display de productos -->
     <main>
         <div class="container">
             <table id="tabla">
-                <tr>
+                <tr class="table-header">
                     <th>Producto</th>
                     <th>Cantidad</th>
                     <th>Precio</th>
                     <th>
-                        <i class="fas fa-trash-alt"></i>
+                        <i class="fas fa-trash-alt" onclick="openDeleteModal()"></i>
                     </th>
                 </tr>
             </table>
         </div>
     </main>
-
+    
+    <!-- seccion para anadir product -->
     <div class="add-product">
         <div class="adding-section">
             <div class="adding-section-column">
@@ -38,14 +46,35 @@
                 <label for="precio">Precio</label>
             </div>
             <div class="adding-section-column">
-                <input type="text" name="alias" >
-                <input type="text" name="cantidad" >
-                <input type="text" name="precio" >
+                <input type="text" name="alias" oninput="checkTrueValue(0)" >
+                <input type="text" name="cantidad" oninput="checkTrueValue(1)">
+                <input type="text" name="precio" oninput="checkTrueValue(2)">
             </div>
         </div>
+        <i class="fas fa-percentage" onclick="openDiscount()"></i>
         <i class="fas fa-plus-circle" onclick="createProduct()"></i>
     </div>     
     
+    <!-- modal para aplicar descuento -->
+    <div class="discount-modal modal" id="modal">
+        <i class="fas fa-arrow-circle-left" onclick="closeDiscount()"></i>
+        <div>
+            <p>¿Qué descuento tiene el producto?</p>
+            <p>
+                <input type="text" oninput="checkTrueValue(3)">
+                <span>%</span>
+            </p>
+            <button type="button" onclick="applyDiscount()">Aplicar</button>
+        </div>
+    </div>
+
+    <!-- modal para eliminar todos los productos -->
+    <div class="delete-modal modal" id="delete">
+        <i class="fas fa-arrow-circle-left" onclick="closeDeleteModal()" ></i>
+        <p>Borrar todos los productos</p>
+        <button type="button" onclick="deleteAllProducts()">Aceptar</button>
+    </div>
+
     <script src="./js/objects.js"></script>
 </body>
 </html>

@@ -2,9 +2,13 @@ var table = document.getElementById('tabla')
 var inputs = document.getElementsByTagName('input')
 var showTotal = document.getElementById('total')
 var rows = document.getElementsByTagName('tr')
+var modal = document.getElementById('modal')
+var borderWidth = 2
+var wrongColor = 'red'
+var okColor = 'green'
+var inputsCleared = '#ffffffa1'
 
 var products = []
-// var productsPrices = [0]
 var acum = 1
 var total = 0
 
@@ -27,22 +31,35 @@ function createProduct(){
     let productQuantity = Number(inputs[1].value)
     let pricePerUnit = Number(inputs[2].value)
 
+    if(!productName || !productQuantity || !pricePerUnit){
+        if(!productName){
+            inputs[0].style.borderBottom = `${borderWidth}px solid ${wrongColor}`
+        }
+        if(!productQuantity){
+            inputs[1].style.borderBottom = `${borderWidth}px solid ${wrongColor}`
+        }
+        if(!pricePerUnit){
+            inputs[2].style.borderBottom = `${borderWidth}px solid ${wrongColor}`
+        }
+        return false
+    }
+
     let newProduct = new Product(acum, productName, productQuantity, pricePerUnit)
 
     products.push(newProduct)
-    // productsPrices.push(newProduct.totalPrice)
-    // console.log(productsPrices)
+    console.log(products)
     acum++
 
     createNewTableRow(newProduct)
 
     clearInputs()
-    showTotalChart(newProduct.totalPrice)
+    showTotalChart()
 }
 
 function clearInputs(){
-    for(var i=0; i<inputs.length; i++){
+    for(var i=0; i<inputs.length - 1; i++){
         inputs[i].value = ''
+        inputs[i].style.borderBottom = `${borderWidth}px solid ${inputsCleared}`
     }
 }
 
@@ -60,9 +77,9 @@ function createNewTableRow({name, quantity, price, totalPrice, id}){
     newTableRow.id = `row${id}`
 
     icon.classList.add('fas')
-    icon.classList.add('fa-trash-alt')
+    icon.classList.add('fa-minus-circle')
     icon.onclick = () => {
-        removeProduct(totalPrice, id)
+        removeProduct(id)
     }
 
     tdForProdutc.innerHTML = name
@@ -77,15 +94,80 @@ function createNewTableRow({name, quantity, price, totalPrice, id}){
     table.appendChild(newTableRow)
 }
 
-function showTotalChart(productPrice){
-    total += productPrice
-    showTotal.innerHTML = total
+function showTotalChart(){
+    total = products.reduce((acum, producto) => acum + producto.totalPrice, 0)
+    showTotal.innerHTML = total.toFixed(2)
 }
 
-function removeProduct(productPrice, id){
+function removeProduct(id){
     let rowToBeDeleetd = document.getElementById(`row${id}`)
-    total -= productPrice
-    showTotal.innerHTML = total
+    let filtro = products.filter( product => product.id !== id)
+    
+    products = filtro
+    console.log(products)
+    showTotalChart()
     rowToBeDeleetd.remove()
+}
 
+function checkTrueValue(inputid){
+
+    if(inputid !== 0){
+        let input = Number(inputs[inputid].value)
+        if(!input){
+            inputs[inputid].style.borderBottom = `${borderWidth}px solid ${wrongColor}`
+        } else {
+            inputs[inputid].style.borderBottom = `${borderWidth}px solid ${okColor}`
+        }
+    } else {
+        if(!inputs[inputid].value){
+            inputs[inputid].style.borderBottom = `${borderWidth}px solid ${wrongColor}`
+        } else {
+            inputs[inputid].style.borderBottom = `${borderWidth}px solid ${okColor}`
+        }
+    }
+}
+
+function openDiscount(){    
+    let valorInputPrecio = Number(inputs[2].value)
+
+    if(valorInputPrecio){
+        modal.style.display = 'flex'
+    } else {
+        inputs[2].style.borderBottom = `${borderWidth}px solid ${wrongColor}`
+    }
+}
+
+function applyDiscount(){    
+    let discount = Number(inputs[3].value)
+    
+    if(!discount){
+        inputs[3].style.borderBottom = `${borderWidth}px solid ${wrongColor}`
+        return false
+    }
+
+    // 30 - 0.7
+    discount = Math.abs((discount/100)-1)
+    inputs[2].value = (inputs[2].value * discount).toFixed(2) 
+
+    inputs[3].style.borderBottom = `${borderWidth}px solid white`
+    inputs[3].value = ''
+    modal.style.display = 'none'
+}
+
+function closeDiscount(){
+    modal.style.display = 'none'
+}
+
+function openDeleteModal(){
+    const modal = document.getElementById('delete')
+    modal.style.display = 'flex'
+}
+
+function closeDeleteModal(){
+    const modal = document.getElementById('delete')
+    modal.style.display = 'none'
+}
+
+function deleteAllProducts(){
+    document.location.reload()
 }
