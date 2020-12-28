@@ -66,7 +66,7 @@ function validateInputsContent(productName, productQuantity, pricePerUnit){
 }
 
 function clearInputs(){
-    for(var i=0; i<inputs.length - 1; i++){
+    for(var i=0; i<3; i++){
         inputs[i].value = ''
         inputs[i].style.borderBottom = `${borderWidth}px solid ${inputsCleared}`
     }
