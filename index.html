@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Superomi</title>
+    <title>ChopinLiszt</title>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/icons.css">
+    <link rel="stylesheet" href="./styles/modals.css">
 </head>
 <body>
     <header>
         <img src="https://i.ibb.co/Vm1VzRh/super-omi-logo2.png" alt="logo">
-        <h1>SafeShop</h1>
+        <h1>Chopin</h1>
+        <i class="fas fa-tasks" onclick="openShoppingListModal()"></i>
         <a href="#"><i class="fas fa-donate"></i></a>
         <div class="total">
             <i class="fas fa-shopping-cart"></i>
@@ -46,9 +49,9 @@
                 <label for="precio">Precio</label>
             </div>
             <div class="adding-section-column">
-                <input type="text" name="alias" oninput="checkTrueValue(0)" >
-                <input type="text" name="cantidad" oninput="checkTrueValue(1)">
-                <input type="text" name="precio" oninput="checkTrueValue(2)">
+                <input type="text" name="alias" oninput="checkTrueValue(this)" >
+                <input type="text" name="cantidad" oninput="checkTrueValue(this)">
+                <input type="text" name="precio" oninput="checkTrueValue(this)">
             </div>
         </div>
         <i class="fas fa-percentage" onclick="openDiscount()"></i>
@@ -57,11 +60,11 @@
     
     <!-- modal para aplicar descuento -->
     <div class="discount-modal modal" id="modal">
-        <i class="fas fa-arrow-circle-left" onclick="closeDiscount()"></i>
+        <i class="fas fa-arrow-circle-left" onclick="closeModal(0)"></i>
         <div>
             <p>¿Qué descuento tiene el producto?</p>
             <p>
-                <input type="text" oninput="checkTrueValue(3)">
+                <input type="text" name="discount" oninput="checkTrueValue(this)">
                 <span>%</span>
             </p>
             <button type="button" onclick="applyDiscount()">Aplicar</button>
@@ -70,9 +73,19 @@
 
     <!-- modal para eliminar todos los productos -->
     <div class="delete-modal modal" id="delete">
-        <i class="fas fa-arrow-circle-left" onclick="closeDeleteModal()" ></i>
+        <i class="fas fa-arrow-circle-left" onclick="closeModal(1)" ></i>
         <p>Borrar todos los productos</p>
         <button type="button" onclick="deleteAllProducts()">Aceptar</button>
+    </div>
+
+    <!-- shopping list modal -->
+    <div class="modal shoppingList">
+        <i class="fas fa-arrow-circle-left" onclick="closeModal(2)" ></i>
+        <h1>Chopin Liszt</h1>
+        <div>
+            <input type="text" onfocus="createNewShoppingItem(this)"> 
+            <i class="fas fa-check" onclick="checkOnProduct(this)"></i>
+        </div>
     </div>
 
     <script src="./js/objects.js"></script>

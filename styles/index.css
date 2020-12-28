@@ -29,11 +29,6 @@ header img {
     width: 60px;
 }
 
-.fa-donate {
-    font-size: 30px;
-    color: gold;
-}
-
 #total{
     font-size: 25px;
 }
@@ -52,8 +47,6 @@ input {
     outline: none;
     -webkit-appearance: none;
     text-align: center;
-    /* border: 2px solid black; */
-    /* background-color: #ffffff6b; */
     background: transparent;
     border: none;
     border-radius: 0;
@@ -112,59 +105,6 @@ tr:nth-child(even) {
     justify-content: space-around;
 }
 
-.fa-plus-circle {
-    font-size: 35px;
-    color: #2e3192;
-}
-
-.fa-minus-circle{
-    color: red;
-    font-size: 25px;
-}
-
-.fa-percentage {
-    font-size: 35px;
-    /* color: #00a99d; */
-    color: #09eddd;
-}
-
-.fa-shopping-cart {
-    font-size: 18px;
-}
-
-.fas {
-    cursor: pointer;
-}
-
-.modal {
-    position: fixed;
-    width: 100%;
-    background-color: #000000cf;
-    justify-content: center;
-    align-items: center;
-    display: none;
-    flex-direction: column;
-}
-
-.discount-modal {
-    top: 0;
-    height: 100%;
-}
-
-.discount-modal div {
-    /* border: 1px solid white; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-} 
-
-.modal p {
-    /* margin: 20px 0; */
-    font-size: 18px;
-    color: white;
-}
-
 button {
     -webkit-appearance: none;
     appearance: none;
@@ -176,29 +116,6 @@ button {
     margin: 20px 0;
     outline: none;
     font-family: 'Indie Flower', cursive;
-}
-
-.discount-modal input {
-    /* background-color: #000000ba; */
-    color: white;
-    border-bottom: 2px solid white;
-}
-
-.fa-arrow-circle-left {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    color: green;
-    font-size: 35px;
-}
-
-.delete-modal {
-    height: 50%;
-    bottom: 0;
-}
-
-.delete-modal button {
-    margin: 0;
 }
 
 @media only screen and (max-width:560px){

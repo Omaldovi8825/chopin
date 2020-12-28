@@ -1,0 +1,48 @@
+.fas {
+    cursor: pointer;
+}
+
+.fa-plus-circle {
+    font-size: 35px;
+    color: #2e3192;
+}
+
+.fa-minus-circle{
+    color: red;
+    font-size: 25px;
+}
+
+.fa-percentage {
+    font-size: 35px;
+    /* color: #00a99d; */
+    color: #09eddd;
+}
+
+.fa-shopping-cart {
+    font-size: 18px;
+}
+
+.fa-tasks {
+    font-size: 30px;
+    color: white;
+}
+
+.fa-arrow-circle-left {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: green;
+    font-size: 35px;
+}
+
+.fa-donate {
+    font-size: 30px;
+    color: gold;
+}
+
+.fa-check {
+    color: gray;
+    font-size: 25px;
+    margin-left: 30px;
+}
+
