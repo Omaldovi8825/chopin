@@ -1,7 +1,6 @@
 {
   "name": "prueba-super",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,5 +8,17 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Omaldovi8825/chopin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Omaldovi8825/chopin/issues"
+  },
+  "homepage": "https://github.com/Omaldovi8825/chopin#readme",
+  "description": "",
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
 }

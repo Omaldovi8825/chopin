@@ -5,24 +5,28 @@
 
 body {
     margin: 0;
-    font-family: 'Indie Flower', cursive;
-    background-color: #cec8d7;
+    font-family: 'Yusei Magic', sans-serif;
+    background-color: #d3f8f8;
+    color: rgb(13, 64, 109);
 }
 
 header {
-    border: 1px solid #00000041;
+    box-shadow: 10px 0px 20px black;
     /* position: relative;
     padding: 10px 0px; */
-    background-color: #61a1b6da;
+    background-color: #083d4b;
     display: flex;
     justify-content: space-around;
     align-items: center;
     position: sticky;
     top: 0;
+    color: white;
+    height: 80px;;
 }
 
 header h1{
     margin: 0;
+    color: white;
 }
 
 header img {
@@ -36,6 +40,7 @@ header img {
 
 #total{
     font-size: 25px;
+    color: aliceblue;
 }
 
 .total {
@@ -57,7 +62,8 @@ input {
     background: transparent;
     border: none;
     border-radius: 0;
-    border-bottom: 2px solid #ffffffa1;
+    border-bottom: 2px solid #befae3;
+    color: aqua;
 }
 
 table {
@@ -66,13 +72,13 @@ table {
 }
 
 td, th {
-    border: 1px solid #0000006e;
+    /* border: 1px solid #0000006e; */
     padding: 8px;
     text-align: center;
 }
 
 tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: #acc9d13f;
 }
 
 .container {
@@ -82,8 +88,9 @@ tr:nth-child(even) {
 }
 
 .table-header {
-    background-color: #826f97;
+    background-color: #664166;
     color: white;
+    box-shadow: 0px 0px 20px rgb(92, 50, 83);
 }
 
 .add-product {
@@ -93,10 +100,11 @@ tr:nth-child(even) {
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    border: 1px solid #00000041;
+    /* border: 1px solid wheat; */
     /* background-color: #ffffffc4; */
-    background-color: #61a1b6da;
+    background-color: #083d4b;
     padding-bottom: 5px;
+    box-shadow: 0px 0px 20px rgb(92, 50, 83);
 }
 
 .adding-section {
@@ -114,22 +122,38 @@ tr:nth-child(even) {
 
 .fa-plus-circle {
     font-size: 35px;
-    color: #2e3192;
+    color: #39f50a;
 }
+.fa-plus-circle:active {
+    box-shadow: 0px 0px 20px white;
+    border-radius: 50%;
+}
+
 
 .fa-minus-circle{
     color: red;
     font-size: 25px;
 }
 
+.fa-minus-circle:active{
+    box-shadow: 0px 0px 20px black;
+    border-radius: 50%;
+}
 .fa-percentage {
     font-size: 35px;
     /* color: #00a99d; */
-    color: #09eddd;
+    color: #ede909;
 }
+.fa-percentage:active {
+    box-shadow: 0px 0px 20px white;
+    border-radius: 50%;
+    background-color: #ffffffa1;
+}
+
 
 .fa-shopping-cart {
     font-size: 18px;
+    color: aqua;
 }
 
 .fas {
@@ -139,7 +163,7 @@ tr:nth-child(even) {
 .modal {
     position: fixed;
     width: 100%;
-    background-color: #000000cf;
+    background-color: white;
     justify-content: center;
     align-items: center;
     display: none;
