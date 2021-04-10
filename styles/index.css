@@ -27,6 +27,7 @@ header h1{
 
 header img {
     width: 60px;
+    display: none;
 }
 
 .fa-donate {
